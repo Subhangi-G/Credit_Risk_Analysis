@@ -30,7 +30,7 @@ This model was then used to predict using the testing data, and the predicted ou
 
 Results are reported here.
 
-#### Oversampling algorithms 
+### *Oversampling algorithms*
 
 **RandomOverSampler**\
 Oversampling was first performed using the RandomOverSampler algorithm. A picture of the result is included below.
@@ -47,7 +47,7 @@ Here we will focus on the precision and recall for high risk loans only because 
 Also note that accuracy as a metric can be misleading when working with an imbalanced dataset (this is expained in detail in the summary section). 
 
 
-**SMOTE**
+**SMOTE**\
 Oversampling was performed using the SMOTE algorithm. A picture of the result is included below.
 
 ![SMOTE](https://user-images.githubusercontent.com/71800628/129619262-ed1e20af-6e55-4150-849c-eb21ca743f6f.png)
@@ -59,7 +59,7 @@ Oversampling was performed using the SMOTE algorithm. A picture of the result is
 
 Over sampling using two different methods produced similar results, with RandomeOverSampler leading to slightly better recall than SMOTE.
 
-#### Undersampling algorithm 
+### *Undersampling algorithm* 
 **ClusterCentroids**\
 Undersampling was performed using the ClusterCentroid algorithm. A picture of the result is included below.
 
@@ -72,7 +72,7 @@ Undersampling was performed using the ClusterCentroid algorithm. A picture of th
 
 Notice that although the accuracy of the model is low compared to results obtained by oversampling, the recall for high risk is very similar to RandomOverSampling, and better than SMOTE.
 
-#### Combinatorial approach algorithm
+### *Combinatorial approach algorithm*
 **SMOTEENN**\
 A combinatorial approach of over-and-undersampling was undertaken using the SMOTEENN algorithm. A picture of the result is included below.
 
@@ -92,7 +92,7 @@ Here two separate models based on two separate methods, bagging and boosting, to
 The training data (X_train and y_train) is used to train the model. The model is then used for prediction using the testing set (X_test). The predicted y values, y_pred is then compared with the expected outcomes, y_test.\
 As before the balanced accuracy score, confusion matrix, and a classification report is generated for each model.
 
-#### Bagging method
+### *Bagging method*
 **BalancedRandomForestClassifier**\
 The BalancedRandomForestClassifier is an ensemble algorithm that uses subsets of the training data on multiple decision tree models, and then combines the predictions from all. The result is shown in the picture below.
 
@@ -110,7 +110,7 @@ The input features, used for decision making in the random forest algorithm, is 
 ![BalancedRandomForestClassifier_FeatureImportances](https://user-images.githubusercontent.com/71800628/129619400-805d4509-fc71-478e-9cac-10a3afa0d0e7.png)
 
 
-#### Boosting method
+### *Boosting method*
 **EasyEnsembleClassifier**\
 The EasyEnsembleClassifier is an AdaBoost algorithm that combines many weak classifier into a single strong classifier. The weak learner models are trained and applied sequantially to the ensemble. Each subsequent models weighs the training data to correct the prediction errors made by the previous model in the sequence. The result is shown in the picture below.
 
