@@ -35,7 +35,8 @@ Results are reported here.
 **RandomOverSampler**\
 Oversampling was first performed using the RandomOverSampler algorithm. A picture of the result is included below.
 
-(pic of random oversampler)
+![RandomOverSampler](https://user-images.githubusercontent.com/71800628/129619213-56763d83-fe92-41fe-bf22-5f7067bf94c1.png)
+
 
 - The accuracy is around 67%.
 - The precision of capturing defaulters is 1% meaning that out of all the high risk loans predicted by the model 1% are true defaulters. In contrast, 100% of the non-defaulters predicted by the model are truly low_risk (as precision for low risk was 100%)
@@ -49,7 +50,8 @@ Also note that accuracy as a metric can be misleading when working with an imbal
 **SMOTE**
 Oversampling was performed using the SMOTE algorithm. A picture of the result is included below.
 
-(pic of SMOTE)
+![SMOTE](https://user-images.githubusercontent.com/71800628/129619262-ed1e20af-6e55-4150-849c-eb21ca743f6f.png)
+
 
 - The accuracy is 66%.
 - The precision for high risk loans is 1%.
@@ -61,7 +63,8 @@ Over sampling using two different methods produced similar results, with Randome
 **ClusterCentroids**\
 Undersampling was performed using the ClusterCentroid algorithm. A picture of the result is included below.
 
-(pic of ClusterCentroid)
+![ClusterCentroids](https://user-images.githubusercontent.com/71800628/129619286-365fca9d-bc22-4a34-8d73-362bc53439fe.png)
+
 
 - The accuracy is around 54%.
 - The precision for high risk loans is 1%. 
@@ -73,7 +76,8 @@ Notice that although the accuracy of the model is low compared to results obtain
 **SMOTEENN**\
 A combinatorial approach of over-and-undersampling was undertaken using the SMOTEENN algorithm. A picture of the result is included below.
 
-(pic of SMOTEENN)
+![SMOTEENN](https://user-images.githubusercontent.com/71800628/129619333-ffd89929-6f78-4d36-b08d-17d765218de7.png)
+
 
 - The accuracy is around 64%.
 - The precision for high risk loans is 1%. 
@@ -92,7 +96,8 @@ As before the balanced accuracy score, confusion matrix, and a classification re
 **BalancedRandomForestClassifier**\
 The BalancedRandomForestClassifier is an ensemble algorithm that uses subsets of the training data on multiple decision tree models, and then combines the predictions from all. The result is shown in the picture below.
 
-(pic of balancedRandomForestClassifier)
+![BalancedRandomForestClassifier](https://user-images.githubusercontent.com/71800628/129619369-4a9eb84c-bfdf-4014-90cf-81fdf8c88aa7.png)
+
 
 - The accuracy is around 79%.
 - The precision for high risk loans is 3%. 
@@ -102,13 +107,15 @@ Notice that accuracy is better than the results obtained when the training data 
 
 The input features, used for decision making in the random forest algorithm, is shown below in order of their relavance. The recall obtained by using the above method may be improved by employing feature selection using the results of the feature importance. (This part has not been implemented in this challenge). 
 
-(pic of feature importances)
+![BalancedRandomForestClassifier_FeatureImportances](https://user-images.githubusercontent.com/71800628/129619400-805d4509-fc71-478e-9cac-10a3afa0d0e7.png)
+
 
 #### Boosting method
 **EasyEnsembleClassifier**\
 The EasyEnsembleClassifier is an AdaBoost algorithm that combines many weak classifier into a single strong classifier. The weak learner models are trained and applied sequantially to the ensemble. Each subsequent models weighs the training data to correct the prediction errors made by the previous model in the sequence. The result is shown in the picture below.
 
-(pic of EasyEnsembleClassifier)
+![EasyEnsambleClassifier](https://user-images.githubusercontent.com/71800628/129619423-40ab045a-0009-45b0-8b56-c9970e8fe1fa.png)
+
 
 - The accuracy is around 93%.
 - The precision for high risk loans is 9%. 
