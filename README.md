@@ -35,8 +35,7 @@ Results are reported here.
 **RandomOverSampler**\
 Oversampling was first performed using the RandomOverSampler algorithm. A picture of the result is included below.
 
-![RandomOverSampler](https://user-images.githubusercontent.com/71800628/129619213-56763d83-fe92-41fe-bf22-5f7067bf94c1.png)
-
+![RandomOverSampler_dark](https://user-images.githubusercontent.com/71800628/130281529-f6d5b548-b780-4a3b-a47b-6982ba2bab1f.png)
 
 - The accuracy is around 67%.
 - The precision of capturing defaulters is 1% meaning that out of all the high risk loans predicted by the model 1% are true defaulters. In contrast, 100% of the non-defaulters predicted by the model are truly low_risk (as precision for low risk was 100%)
@@ -51,7 +50,6 @@ Also note that accuracy as a metric can be misleading when working with an imbal
 Oversampling was performed using the SMOTE algorithm. A picture of the result is included below.
 
 ![SMOTE](https://user-images.githubusercontent.com/71800628/129619262-ed1e20af-6e55-4150-849c-eb21ca743f6f.png)
-
 
 - The accuracy is 66%.
 - The precision for high risk loans is 1%.
@@ -88,7 +86,7 @@ The accuracy is similar too to the other methods (better than SMOTE). It is expe
 
 
 ### Ensemble Classifiers (models that reduce bias)
-Here two separate models based on two separate methods, bagging and boosting, to reduce bias are used.\
+Here two separate models based on two separate methods, bagging and boosting, are used to reduce bias.\
 The training data (X_train and y_train) is used to train the model. The model is then used for prediction using the testing set (X_test). The predicted y values, y_pred is then compared with the expected outcomes, y_test.\
 As before the balanced accuracy score, confusion matrix, and a classification report is generated for each model.
 
@@ -126,7 +124,7 @@ We see that the results obtained from this method is vastly improved for all the
 
 ## Summary
 
-It has been mentioned above that accuracy alone is not a reliable metric when working with classification problems that are imbalanced. Accuracy is defined as the percentage of right predictions made by the algorithm (TP + TN)/(TP + TN + FP + FN).
+It has been mentioned above that accuracy alone is not a reliable metric when working with classification problems that are imbalanced. Accuracy is defined as the percentage of correct predictions made by the algorithm (TP + TN)/(TP + TN + FP + FN).
 
 where:
 - TP is the True Positive
@@ -140,7 +138,7 @@ Precision is the measure of the percentage predicted correctly as true positive 
 Recall is a measure of the percentage of actual true positives i.e. TP/(TP + FN).\
 F1 score is the harmonic mean between precision and recall. A high F1 score implies a good balance between the two. In contrast a low score means that one of measures (precision or recall) is high at the expense of the other. We observe this for high risk loans in the classification report obatained from each of the ML algorithms.
 
-In the present scenario, the Lending Club will benefit most if it is able to accurately identify most of the defaulters. This may come at a cost of missed opportunities with low risk clients. However incorrectly identified low risk clients may be further  scrutinized and re-evaluated correctly. In contrast incorrectly identifying defaulters as low risk may result in huge financial losses.
+In the present scenario, the Lending Club will benefit most if it is able to accurately identify most of the defaulters. This may come at a cost of missed opportunities with low risk clients. However incorrectly identified low risk clients may be further scrutinized and re-evaluated correctly. In contrast, not being able to identify/capture all the defaulters will result in major financial loss for the firm.
 
 From the above analysis we see that the model that gives the best recall for high risk loans is the EasyEnsembleClassifier (an AdaBoost algorithm). The sensitivity is 92% meaning this model is able to catch 92% of the high risk loans in the dataset.\
 The precision is 9% which means that out of all the high risk predictions made by the model, only 9% was correctly classified, and the remaining were misclassified. 9% is better than the precision measures from the other algorithms, but still low. However, the important measure to consider is the recall, as it's essential to capture most of the defaulters to avoid financial loss.
